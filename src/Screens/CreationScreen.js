@@ -1,20 +1,44 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, ScrollView } from 'react-native';
 import { CreationStyles } from '../Styles/CreationStyles.ts';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const CreationScreen = ({navigation}) => {
 
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
 
-    const handleSendMessage = () => {
+    useEffect(() => {
+        const getStoredMessages = async () => {
+            try {
+                const storedMessages = await AsyncStorage.getItem('chatMessages');
+                if (storedMessages !== null) {
+                    setMessages(JSON.parse(storedMessages));
+                }
+            } catch (error) {
+                console.error('Erro ao recuperar as mensagens: ', error);
+            }
+        };
+    
+        getStoredMessages();
+    }, []);
+
+    const handleSendMessage = async () => {
         if (message.trim() !== '') {
-            setMessages([...messages, { text: message, fromUser: true }]);
+            const newMessage = { text: message, fromUser: true };
+            const updatedMessages = [...messages, newMessage];
+            setMessages(updatedMessages);
             setMessage('');
+    
+            try {
+                await AsyncStorage.setItem('chatMessages', JSON.stringify(updatedMessages));
+            } catch (error) {
+                console.error('Erro ao salvar as mensagens: ', error);
+            }
         }
-    }
+    };
 
     return (
         <View style={CreationStyles.containerMaster}>
