@@ -4,6 +4,8 @@ import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import { LoginStyles } from '../Styles/LoginStyles.ts';
+import { autenticarUsuario } from '../Components/ApiService.js';
+
 
 const LoginScreen = () => {
 
@@ -11,6 +13,17 @@ const LoginScreen = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
 
+    const handleLogin = async () => {
+        const response = await autenticarUsuario('usuario@email.com', 'senha123');
+
+        if (response.sucesso === true) {
+            navigation.navigate('MenuScreen')
+        } else {
+            Alert('Email ou senha errados')
+        }
+    
+    }
+    
     return (
         <View style={LoginStyles.containerMaster}>
             <Image
@@ -64,7 +77,8 @@ const LoginScreen = () => {
                         }
                         value={senha} placeholder='Digite sua senha'
                         placeholderTextColor="#AB8103"
-                        keyboardType='email-address'>
+                        keyboardType='default'
+                        secureTextEntry={true}>
                     </TextInput>
                 </View>
                 <View style={LoginStyles.underline}></View>
@@ -76,9 +90,7 @@ const LoginScreen = () => {
                 </TouchableWithoutFeedback>
                 <TouchableOpacity
                     style={LoginStyles.loginButton}
-                    onPress={() =>
-                        navigation.navigate('MenuScreen')
-                    }>
+                    onPress={handleLogin}>
                     <Text style={LoginStyles.loginText}>ENTRAR</Text>
                 </TouchableOpacity>
             </View>

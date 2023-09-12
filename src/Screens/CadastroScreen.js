@@ -4,13 +4,32 @@ import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
 import { CadastroStyles } from '../Styles/CadastroStyles.ts';
+import { cadastrarUsuario } from '../Components/ApiService.js';
 
 const CadastroScreen = () => {
 
     const navigation = useNavigation();
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+    const [senha, setSenha] = useState('');
+    const [confirmarSenha, setConfirmarSenha] = useState('');
+
+    const handleCadastro = async () => {
+        try {
+            const response = await cadastrarUsuario(email, senha);
+            if (senha == confirmarSenha){
+                if (response.sucesso === true) {
+                    navigation.navigate('MenuScreen');
+                
+                }else {
+                    alert('A conta não foi criada com êxito');
+                }
+            } else {
+                alert('Credenciais inválidas ou faltantes');
+            }
+        } catch (error) {
+            console.error('Erro ao cadastrar: ', error);
+        }
+    };
 
     return (
         <View style={CadastroStyles.containerMaster}>
@@ -61,9 +80,9 @@ const CadastroScreen = () => {
                     <TextInput
                         style={CadastroStyles.input}
                         onChangeText={(text) =>
-                            setPassword(text)
+                            setSenha(text)
                         }
-                        value={password} placeholder='Digite sua senha'
+                        value={senha} placeholder='Digite sua senha'
                         placeholderTextColor="#AB8103"
                         keyboardType='default'
                         secureTextEntry={true}>
@@ -80,9 +99,9 @@ const CadastroScreen = () => {
                     <TextInput
                         style={CadastroStyles.input}
                         onChangeText={(text) =>
-                            setConfirmPassword(text)
+                            setConfirmarSenha(text)
                         }
-                        value={confirmPassword}
+                        value={confirmarSenha}
                         placeholder='Confirme sua senha'
                         placeholderTextColor="#AB8103"
                         keyboardType='default'
@@ -98,9 +117,7 @@ const CadastroScreen = () => {
                 </TouchableWithoutFeedback>
                 <TouchableOpacity
                     style={CadastroStyles.cadastrarButton}
-                    onPress={() =>
-                        navigation.navigate('MenuScreen')
-                    }>
+                    onPress={handleCadastro}>
                     <Text style={CadastroStyles.cadastrarText}>CADASTRAR</Text>
                 </TouchableOpacity>
             </View>
