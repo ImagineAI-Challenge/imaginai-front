@@ -17,17 +17,20 @@ const CreationStyles = StyleSheet.create({
     marginTop: screenHeight * 0.05,
   },
   body: {
-    flex: 0.8,
+    flex: 0.75,
   },
   footer: {
-    flex: 0.1,
-    bottomMargin: screenHeight * 0.1,
+    flex: 0.15,
   },
   userMessageContainer: {
-    backgroundColor: '#1E2748'
+    backgroundColor: '#1E2748',
+    height: screenHeight * 0.06,
+    justifyContent: 'center'
   },
   botMessageContainer: {
-
+    backgroundColor: '#151B33',
+    marginVertical: screenHeight * 0.02,
+    justifyContent: 'center',
   },
   // CONTAINERS
 
@@ -39,6 +42,7 @@ const CreationStyles = StyleSheet.create({
     width: screenWidth * 0.9,
     height: screenHeight * 0.06,
     justifyContent: 'center',
+    marginTop: screenHeight * 0.03,
   },
   input: {
     flex: 1,
