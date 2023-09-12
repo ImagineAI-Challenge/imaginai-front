@@ -13,7 +13,7 @@ const MenuStyles = StyleSheet.create({
   //CONTAINERS
 
   // BUTTONS
-  newHistoryButton: {
+  newStoryButton: {
     width: screenWidth * 0.7,
     height: screenHeight * 0.08,
     backgroundColor: '#FFC004',
@@ -45,7 +45,7 @@ const MenuStyles = StyleSheet.create({
   //INPUTS
 
   // TEXTS
-  newHistoryText: {
+  newStoryText: {
     color: 'white',
     fontFamily: 'LilitaOne',
     fontSize: screenHeight * 0.035,

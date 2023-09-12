@@ -3,7 +3,7 @@ import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedbac
 import { CreationStyles } from '../Styles/CreationStyles.ts';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import { getStoredMessages,sendMessage } from '../Components/ChatManager.js';
+import { getStoredMessages, sendMessage } from '../Components/ChatManager.js';
 
 const CreationScreen = ({ navigation }) => {
     const [message, setMessage] = useState('');
@@ -14,14 +14,12 @@ const CreationScreen = ({ navigation }) => {
             const storedMessages = await getStoredMessages();
             setMessages(storedMessages);
         };
-
         loadStoredMessages();
     }, []);
 
     const handleSendMessage = async () => {
         sendMessage(message, messages, setMessages, setMessage);
     };
-
 
     return (
         <View style={CreationStyles.containerMaster}>

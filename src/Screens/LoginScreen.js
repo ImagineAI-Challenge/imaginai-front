@@ -12,9 +12,9 @@ const LoginScreen = () => {
     const navigation = useNavigation();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-
+    /* PROXIMA SPRINT
     const handleLogin = async () => {
-        const response = await autenticarUsuario('usuario@email.com', 'senha123');
+        const response = await autenticarUsuario(email, senha);
 
         if (response.sucesso === true) {
             navigation.navigate('MenuScreen')
@@ -23,7 +23,7 @@ const LoginScreen = () => {
         }
     
     }
-    
+    */
     return (
         <View style={LoginStyles.containerMaster}>
             <Image
@@ -90,7 +90,9 @@ const LoginScreen = () => {
                 </TouchableWithoutFeedback>
                 <TouchableOpacity
                     style={LoginStyles.loginButton}
-                    onPress={handleLogin}>
+                    onPress={() =>
+                        navigation.navigate('MenuScreen')
+                    }>
                     <Text style={LoginStyles.loginText}>ENTRAR</Text>
                 </TouchableOpacity>
             </View>

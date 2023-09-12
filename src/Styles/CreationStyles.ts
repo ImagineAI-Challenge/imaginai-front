@@ -86,6 +86,7 @@ const CreationStyles = StyleSheet.create({
   logoTranslucid: {
     width: screenWidth * 1,
     height: screenHeight * 0.25,
+    marginBottom: screenHeight * 0.03,
   },
   //MISCELLANEOUS
 });

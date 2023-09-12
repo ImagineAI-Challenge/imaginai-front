@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Image, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View,Image, Text, TextInput, TouchableOpacity } from 'react-native';
 import { MenuStyles } from '../Styles/MenuStyles.ts';
 import Fontisto from 'react-native-vector-icons/dist/Fontisto';
 
-const MenuScreen = ({navigation}) => {
+const MenuScreen = ({ navigation }) => {
 
     const [search, setSearch] = useState('');
 
@@ -19,11 +19,11 @@ const MenuScreen = ({navigation}) => {
                 source={require('../Assets/logo.png')}
             />
             <TouchableOpacity
-                style={MenuStyles.newHistoryButton}
+                style={MenuStyles.newStoryButton}
                 onPress={() =>
                     navigation.navigate('CreationScreen')
                 }>
-                <Text style={MenuStyles.newHistoryText}>NOVA HISTÓRIA</Text>
+                <Text style={MenuStyles.newStoryText}>NOVA HISTÓRIA</Text>
             </TouchableOpacity>
             <View style={MenuStyles.searchBar}>
                 <Fontisto
