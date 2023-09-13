@@ -1,7 +1,7 @@
 ## URLs relevantes
 - [Vídeo de explicação do projeto em geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)
-- [Projeto de IA geradora de mapas](https://github.com/ImagineAI-Challenge/imaginai-api-MagGen-IA-App)
 - [API de comunicação](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)
+- [Projeto de IA geradora de mapas](https://github.com/ImagineAI-Challenge/imaginai-api-MagGen-IA-App)
 
 # Getting Started
 
