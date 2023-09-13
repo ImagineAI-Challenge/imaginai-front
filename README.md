@@ -1,4 +1,6 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# URLs importantes
+- [API backend](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)
+- [Video de explicação do projeto geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)
 
 # Getting Started
 
