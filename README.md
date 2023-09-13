@@ -1,6 +1,7 @@
-# URLs importantes
-- [API backend](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)
-- [Video de explicação do projeto geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)
+## URLs relevantes
+- [Vídeo de explicação do projeto em geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)
+- [Projeto de IA geradora de mapas](https://github.com/ImagineAI-Challenge/imaginai-api-MagGen-IA-App)
+- [API de comunicação](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)
 
 # Getting Started
 
