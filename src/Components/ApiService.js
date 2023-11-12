@@ -1,4 +1,4 @@
-const ip = '172.23.160.1'; // ip da máquina
+const ip = '192.168.15.5'; // ip da máquina
 const port = '8080'; // port vide a api de comunicacao
 
 export const enviarMensagemAPI = async (mensagem) => {

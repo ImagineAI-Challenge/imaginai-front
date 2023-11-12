@@ -1,24 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, ScrollView } from 'react-native';
+import { useRoute } from '@react-navigation/native';
 import { CreationStyles } from '../Styles/CreationStyles.ts';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import { getStoredMessages, sendMessage } from '../Components/ChatManager.js';
+import { getStoredMessages, sendMessage, removeLastChatId} from '../Components/ChatManager.js';
+
 
 const CreationScreen = ({ navigation }) => {
     const [message, setMessage] = useState('');
-    const [messages, setMessages] = useState([]);
+    const [historyMessages, setHistoryMessages] = useState([]);
+    const historyMessagesRef = useRef(historyMessages);
+
+    const route = useRoute();
+    const { params } = route;
+    const chatId = params ? params.chatId : null;
+
 
     useEffect(() => {
+        historyMessagesRef.current = historyMessages;
+    }, [historyMessages]);
+    
+    useEffect(() => {
         const loadStoredMessages = async () => {
-            const storedMessages = await getStoredMessages();
-            setMessages(storedMessages);
+            const storedMessages = await getStoredMessages(chatId);
+            setHistoryMessages(storedMessages);
+            console.log(`Mensagens armazenadas para o chatId ${chatId}:`, storedMessages);
         };
-        loadStoredMessages();
+        
+        if (chatId !== null && chatId !== undefined) {
+            loadStoredMessages();
+        }
+    }, [chatId]);
+
+    useEffect(() => {
+        
+        return () => {
+            console.log(historyMessagesRef.current.length);
+            if (historyMessagesRef.current.length === 0) {
+            removeLastChatId();
+            }
+        };
     }, []);
 
     const handleSendMessage = async () => {
-        sendMessage(message, messages, setMessages, setMessage);
+        sendMessage(chatId, message, historyMessages, setHistoryMessages, setMessage);
     };
 
     return (
@@ -41,7 +67,7 @@ const CreationScreen = ({ navigation }) => {
                     source={require('../Assets/logo_translucid.png')}>
                 </Image>
                 <View>
-                    {messages.map((item, index) => (
+                    {historyMessages.map((item, index) => (
                         <View
                             key={index}
                             style={item.fromUser ? CreationStyles.userMessageContainer : CreationStyles.botMessageContainer}

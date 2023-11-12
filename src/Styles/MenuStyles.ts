@@ -10,6 +10,9 @@ const MenuStyles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
   },
+  storiesContainer: {
+    width: screenWidth * 0.9,
+  },
   //CONTAINERS
 
   // BUTTONS
@@ -21,6 +24,16 @@ const MenuStyles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: screenHeight * 0.03,
     marginTop: screenHeight * 0.01,
+  },
+  storiesButton: {
+    width: screenWidth * 0.65,
+    height: screenHeight * 0.07,
+    left: screenWidth * 0.07,
+    backgroundColor: '#BFC4D9',
+    borderRadius: screenWidth * 0.05,
+    justifyContent: 'center',
+    marginBottom: screenHeight * 0.01,
+    marginTop: screenHeight * 0.02,
   },
   //BUTTONS
 
@@ -41,6 +54,7 @@ const MenuStyles = StyleSheet.create({
     width: screenWidth * 0.8,
     height: screenHeight * 0.06,
     justifyContent: 'center',
+    marginBottom: screenHeight * 0.02,
   },
   //INPUTS
 
@@ -51,6 +65,12 @@ const MenuStyles = StyleSheet.create({
     fontSize: screenHeight * 0.035,
     textAlign: 'center',
   },
+  storiesText: {
+    color: 'white',
+    fontFamily: 'LilitaOne',
+    fontSize: screenHeight * 0.03,
+    textAlign: 'center',
+  },
   //TEXTS
 
   // ICONS
@@ -58,6 +78,12 @@ const MenuStyles = StyleSheet.create({
     left: screenWidth * 0.015,
     top: screenHeight * 0.001,
     fontSize: screenHeight * 0.035,
+  },
+  trashIcon: {
+    position: 'absolute',
+    left: screenWidth * 0.76,
+    bottom: screenHeight * 0.025,
+    fontSize: screenHeight * 0.05,
   },
   //ICONS
 
