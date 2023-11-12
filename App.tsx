@@ -7,6 +7,9 @@ import { CadastroScreen } from './src/Screens/CadastroScreen.js';
 import { LoginScreen } from './src/Screens/LoginScreen.js';
 import { MenuScreen } from './src/Screens/MenuScreen.js';
 import { CreationScreen } from './src/Screens/CreationScreen.js';
+import { PersonagensScreen } from './src/Screens/PersonagensScreen.js';
+import { CriarPersonagemScreen } from './src/Screens/CriarPersonagemScreen.js';
+import { DetalhesPersonagemScreen } from './src/Screens/DetalhesPersonagemScreen.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +23,9 @@ const App = () => {
                 <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="MenuScreen" component={MenuScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="CreationScreen" component={CreationScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="PersonagensScreen" component={PersonagensScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="CriarPersonagemScreen" component={CriarPersonagemScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="DetalhesPersonagemScreen" component={DetalhesPersonagemScreen} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
 

@@ -70,9 +70,17 @@ const MenuScreen = ({ navigation }) => {
             />
             <TouchableOpacity
                 style={MenuStyles.newStoryButton}
+                onPress={() =>
+                    navigation.navigate('PersonagensScreen')
+                }>
+                <Text style={MenuStyles.newStoryText}>PERSONAGENS</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={MenuStyles.newStoryButton}
                 onPress={handleNovaHistoriaButton}>
                 <Text style={MenuStyles.newStoryText}>NOVA HISTÓRIA</Text>
             </TouchableOpacity>
+
             <View style={MenuStyles.searchBar}>
                 <Fontisto
                     style={MenuStyles.searchIcon}
