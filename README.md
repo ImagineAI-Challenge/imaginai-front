@@ -1,82 +1,80 @@
+<div align="center">
+    <img src="src/Assets/logo.png" alt="modelo logico do banco de dados">
+</div>
+
+   Bem-vindo ao projeto ImaginAI, um aplicativo que visa estimular a criatividade e a imaginação dos usuários por meio de criação de histórias interativas com uma inteligência artificial. O objetivo é proporcionar uma experiência envolvente de criação de histórias de RPG, combinando as capacidades do GPT para auxiliar na elaboração das narrativas e do Stable Diffusion para gerar imagens ilustrativas que aprimorem a imersão dos usuários.
+   
+   Nossa iniciativa tem como propósito promover a realização de atividades criativas e lúdicas, incentivando o bem-estar individual e a expressão da imaginação, sem comprometer a capacidade das gerações futuras de se envolverem em atividades similares. Inicialmente, elaboramos um documento abrangente que descreve a visão completa do projeto, com a intenção de transformar essa visão em realidade nas próximas etapas de desenvolvimento.
+   
+   Essa visão envolve a criação de uma IA que não apenas auxilia na criação de histórias de RPG, mas também proporciona uma experiência aprimorada de imersão e imaginação por meio de imagens ilustrativas geradas de forma autônoma.
+
+
+<br>
+
+<div align="center">
+    <h1>PROJETO AINDA EM DESENVOLVIMENTO</h1>
+</div>
+
+<br>
+
+### Sumário
+1. [URLs relevantes](#URLs-relevantes)
+2. [Ambiente de desenvolvimento](#Ambiente-de-desenvolvimento)
+   2.1. [Troubleshooting](#Troubleshooting)
+3. [Instalação do projeto](#Instalacao-do-projeto)
+4. [Iniciar aplicativo](#Iniciar-aplicativo)
+   4.1. [Instruções de uso](#Instruções-de-uso)
+
+
 ## URLs relevantes
-- [Vídeo de explicação do projeto em geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)
-- [API de comunicação](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)
-- [Projeto de IA geradora de mapas](https://github.com/ImagineAI-Challenge/imaginai-api-MagGen-IA-App)
+- *[Vídeo de explicação do projeto em geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)*
+- *[API de comunicação](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)*
+- *[Projeto de IA geradora de mapas](https://github.com/ImagineAI-Challenge/imaginai-api-MagGen-IA-App)*
 
-# Getting Started
+## Ambiente de desenvolvimento
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+>**OBSERVAÇÃO**: Veja a documentação oficial *[React Native - Environment Setup](https://reactnative.dev/docs/environment-setup)* para definir e configurar corretamente o seu ambiente de desenvolvimento.
 
-## Step 1: Start the Metro Server
+## Troubleshooting
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Caso lhe ocorra algum problema na configuração do seu ambiente, veja nessa página *[Troubleshooting](https://reactnative.dev/docs/troubleshooting)*.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Instalação do projeto
 
-```bash
-# using npm
-npm start
-
-# OR using Yarn
-yarn start
+Após configurar o seu ambiente de desenvolvimento para rodar o react-native, instale o projeto pelo meio convencional ou por algum terminal. Primeiramente se direcione ao local desejado e rode o seguinte comando:
 ```
-
-## Step 2: Start your Application
-
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
-
-### For Android
-
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
+git clone https://github.com/ImagineAI-Challenge/imaginai-front
 ```
+Feito isso, abra o seu editor, recomenda-se o *[Visual Studio Code](https://code.visualstudio.com/Download)*, e selecione o projeto front-end do ImaginAI. Ao abrir, navegue até a pasta `/src/Components/ApiService.js` e edite o campo "seu-ip" `const ip = 'seu-ip';` para o seu ip da máquina. Para verificar o seu ip, acesse um terminal ou, se estiver no Windows, o CMD.
 
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+Nele digite o código:
 ```
+ipconfig
+```
+Copie e cole o seu IPV4 e substitua no campo mencionado acima. **Não esqueça de salvar as mudanças!**
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Abra o seu emulador mobile Android Studio (preferencialmente) e um terminal no diretório do projeto já baixado e rode os seguintes comandos:
+```
+npm install
+```
+Esse comando vai instalar todas as dependências usadas no projeto
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+## Iniciar o aplicativo
 
-## Step 3: Modifying your App
+Depois de esperar a instalação dos node_modules, digite, ainda no terminal a fim de iniciar o projeto no seu emulador android:
+```
+npx react-native start
+```
+Logo em seguida, mostrará na tela as seguintes opções:
+```
+r - reload the app
+d - open developer menu
+i - run on IOS
+a - run on Android
+```
+Aperte a tecla "a" para abrir no Android.
+**Pronto**, a sua aplicação agora está aberta. Para conseguir usar em totalidade o aplicativo, precisará baixar a *[API de comunicação](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)*, lá terá o passo a passo de como usá-la.
 
-Now that you have successfully run the app, let's modify it.
+## Instruções de uso
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+O aplicativo é bem intuitivo, consta uma tela inicial com a logo do projeto onde há duas opções de 
