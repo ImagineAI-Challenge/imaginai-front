@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="src/Assets/logo.png" alt="modelo logico do banco de dados">
+    <img src="src/Assets/logo.png" alt="logo imaginai">
 </div>
 
    Bem-vindo ao projeto ImaginAI, um aplicativo que visa estimular a criatividade e a imaginação dos usuários por meio de criação de histórias interativas com uma inteligência artificial. O objetivo é proporcionar uma experiência envolvente de criação de histórias de RPG, combinando as capacidades do GPT para auxiliar na elaboração das narrativas e do Stable Diffusion para gerar imagens ilustrativas que aprimorem a imersão dos usuários.
@@ -20,10 +20,11 @@
 ### Sumário
 1. [URLs relevantes](#URLs-relevantes)
 2. [Ambiente de desenvolvimento](#Ambiente-de-desenvolvimento)
-   2.1. [Troubleshooting](#Troubleshooting)
-3. [Instalação do projeto](#Instalacao-do-projeto)
-4. [Iniciar aplicativo](#Iniciar-aplicativo)
-   4.1. [Instruções de uso](#Instruções-de-uso)
+3. [Troubleshooting](#Troubleshooting)
+4. [Instalação do projeto](#Instalacao-do-projeto)
+5. [Iniciar aplicativo](#Iniciar-aplicativo)
+6. [Instruções de uso](#Instruções-de-uso)
+7. [Testes e limitações](#Testes-e-limitacoes)
 
 
 ## URLs relevantes
@@ -77,4 +78,27 @@ Aperte a tecla "a" para abrir no Android.
 
 ## Instruções de uso
 
-O aplicativo é bem intuitivo, consta uma tela inicial com a logo do projeto onde há duas opções de 
+O aplicativo é bem intuitivo, consta uma tela inicial com a logo do projeto onde há duas opções: login e cadastro.
+
+<div align="center">
+    <img src="imaginai_photos/LoginScreen.png" alt="tela de login">
+    <img src="imaginai_photos/CadastroScreen.png" alt="tela de cadastro">
+</div>
+
+Depois do login, há essa tela onde terão todas as suas histórias criadas, podendo excluí-la ou editá-la do jeito que quiser.
+
+<div align="center">
+    <img src="imaginai_photos/MenuScreen.png" alt="tela de histórias">
+</div>
+
+Por último e não menos importante, essa é a tela onde você vai conversar com a inteligência artificial e criar uma história junto a ela.
+
+<div align="center">
+    <img src="imaginai_photos/CreationScreen.png" alt="tela conversa">
+</div>
+
+## Testes e limitações
+
+Nesse tópico, o assunto abordado será sobre as limitações do aplicativo.
+Como já havia mencionado, o aplicativo está em fase de desenvolvimento, ainda como feature principal do programa, falta a integração com imagem de inteligência artificial.
+Por conta da aplicação ainda estar em testes, o uso de tokens com a API do chatGPT é limitada a 100, ou seja, perguntas complexas não terão o retorno de respostas satisfatórias.
