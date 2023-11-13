@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
-import { EntradaStyles } from '../Styles/EntradaStyles';
+import { EntradaStyles } from '../Styles/EntradaStyles.ts';
 
 const EntradaScreen = ({navigation}) => {
 
@@ -23,7 +23,9 @@ const EntradaScreen = ({navigation}) => {
                 <Text style={EntradaStyles.cadastrarText}>CADASTRE-SE</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={() => navigation.navigate('LoginScreen')}>
+                onPress={() =>
+                    navigation.navigate('LoginScreen')
+                }>
                 <Text style={EntradaStyles.loginText}>LOGIN</Text>
             </TouchableOpacity>
         </View>

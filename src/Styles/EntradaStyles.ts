@@ -17,7 +17,7 @@ const EntradaStyles = StyleSheet.create({
     backgroundColor: '#FFC004',
     width: screenWidth * 0.65,
     height: screenHeight * 0.07,
-    borderRadius: 100,
+    borderRadius: screenWidth * 0.08,
     justifyContent: 'center',
     marginTop: screenHeight * 0.01,
   },
@@ -29,7 +29,6 @@ const EntradaStyles = StyleSheet.create({
     fontFamily: 'LilitaOne',
     fontSize: screenHeight * 0.035,
     textAlign: 'center',
-    textAlignVertical: 'bottom',
   },
   loginText: {
     color: '#FFC004',

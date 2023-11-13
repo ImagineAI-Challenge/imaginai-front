@@ -19,7 +19,7 @@ const CadastroStyles = StyleSheet.create({
         height: screenHeight * 0.77,
         backgroundColor: '#FFC004',
         marginTop: screenHeight * 0.04,
-        borderRadius: 30,
+        borderRadius: screenWidth * 0.1,
     },
     inputContainer: {
         flexDirection: 'row',
@@ -33,7 +33,7 @@ const CadastroStyles = StyleSheet.create({
         backgroundColor: '#AB8103',
         width: screenWidth * 0.6,
         height: screenHeight * 0.07,
-        borderRadius: 30,
+        borderRadius: screenWidth * 0.07,
         justifyContent: 'center',
         alignSelf: 'center',
     },
@@ -48,7 +48,6 @@ const CadastroStyles = StyleSheet.create({
         width: screenWidth * 0.6,
         fontSize: screenHeight * 0.025,
         fontFamily: 'LilitaOne',
-
     },
     // INPUTS
 

@@ -1,9 +1,13 @@
+// IMPORTS DO REACT
 import React, { useState } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
-import { CadastroStyles } from '../Styles/CadastroStyles';
+
+// IMPORTS DO PROPRIO PROJETO
+import { CadastroStyles } from '../Styles/CadastroStyles.ts';
+import { cadastrarUsuario } from '../Components/ApiService.js';
 
 const CadastroScreen = () => {
 
@@ -11,6 +15,24 @@ const CadastroScreen = () => {
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [confirmarSenha, setConfirmarSenha] = useState('');
+
+    const handleCadastro = async () => {
+        try {
+            const response = await cadastrarUsuario(email, senha);
+            if (senha == confirmarSenha){
+                if (response.sucesso === true) {
+                    navigation.navigate('MenuScreen');
+                
+                }else {
+                    alert('A conta não foi criada com êxito');
+                }
+            } else {
+                alert('Credenciais inválidas ou faltantes');
+            }
+        } catch (error) {
+            console.error('Erro ao cadastrar: ', error);
+        }
+    };
 
     return (
         <View style={CadastroStyles.containerMaster}>
@@ -45,7 +67,7 @@ const CadastroScreen = () => {
                         onChangeText={(text) =>
                             setEmail(text)
                         }
-                        value={email} placeholder='digite seu email'
+                        value={email} placeholder='Digite seu email'
                         placeholderTextColor="#AB8103"
                         keyboardType='email-address'>
                     </TextInput>
@@ -63,9 +85,10 @@ const CadastroScreen = () => {
                         onChangeText={(text) =>
                             setSenha(text)
                         }
-                        value={senha} placeholder='digite sua senha'
+                        value={senha} placeholder='Digite sua senha'
                         placeholderTextColor="#AB8103"
-                        keyboardType='email-address'>
+                        keyboardType='default'
+                        secureTextEntry={true}>
                     </TextInput>
                 </View>
                 <View style={CadastroStyles.underline}></View>
@@ -82,9 +105,10 @@ const CadastroScreen = () => {
                             setConfirmarSenha(text)
                         }
                         value={confirmarSenha}
-                        placeholder='confirme sua senha'
+                        placeholder='Confirme sua senha'
                         placeholderTextColor="#AB8103"
-                        keyboardType='email-address'>
+                        keyboardType='default'
+                        secureTextEntry={true}>
                     </TextInput>
                 </View>
                 <View style={CadastroStyles.underline}></View>
@@ -96,9 +120,7 @@ const CadastroScreen = () => {
                 </TouchableWithoutFeedback>
                 <TouchableOpacity
                     style={CadastroStyles.cadastrarButton}
-                    onPress={() =>
-                        navigation.navigate('MenuScreen')
-                    }>
+                    onPress={handleCadastro}>
                     <Text style={CadastroStyles.cadastrarText}>CADASTRAR</Text>
                 </TouchableOpacity>
             </View>
