@@ -1,8 +1,13 @@
+// IMPORTS DO REACT
 import React, { useState } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+
+
+// IMPORTS DO PROPRIO PROJETO
+
 import { CadastroStyles } from '../Styles/CadastroStyles.ts';
 import { cadastrarUsuario } from '../Components/ApiService.js';
 
