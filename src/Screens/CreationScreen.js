@@ -1,3 +1,4 @@
+
 // IMPORTS DO REACT
 import React, { useState, useEffect, useRef } from 'react';
 import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, ScrollView } from 'react-native';
@@ -8,6 +9,15 @@ import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommu
 // IMPORTS DO PROPRIO PROJETO
 import { CreationStyles } from '../Styles/CreationStyles.ts';
 import { sendMessage, loadStoredMessages, cleanUpOnUnmount } from '../Components/ChatManager.js';
+
+import React, { useState, useEffect, useRef } from 'react';
+import { View, Image, Text, TextInput, TouchableOpacity, TouchableWithoutFeedback, ScrollView } from 'react-native';
+import { useRoute } from '@react-navigation/native';
+import { CreationStyles } from '../Styles/CreationStyles.ts';
+import FontAwesome from 'react-native-vector-icons/dist/FontAwesome';
+import MaterialCommunityIcons from 'react-native-vector-icons/dist/MaterialCommunityIcons';
+import { getStoredMessages, sendMessage, removeLastChatId} from '../Components/ChatManager.js';
+
 
 
 const CreationScreen = ({ navigation }) => {
@@ -39,9 +49,39 @@ const CreationScreen = ({ navigation }) => {
     }, []);
 
     // Manipula o envio de mensagens quando o usuário pressiona o botão de envio.
+
+
+    useEffect(() => {
+        historyMessagesRef.current = historyMessages;
+    }, [historyMessages]);
+    
+    useEffect(() => {
+        const loadStoredMessages = async () => {
+            const storedMessages = await getStoredMessages(chatId);
+            setHistoryMessages(storedMessages);
+            console.log(`Mensagens armazenadas para o chatId ${chatId}:`, storedMessages);
+        };
+        
+        if (chatId !== null && chatId !== undefined) {
+            loadStoredMessages();
+        }
+    }, [chatId]);
+
+    useEffect(() => {
+        
+        return () => {
+            console.log(historyMessagesRef.current.length);
+            if (historyMessagesRef.current.length === 0) {
+            removeLastChatId();
+            }
+        };
+    }, []);
+
+
     const handleSendMessage = async () => {
         sendMessage(chatId, message, historyMessages, setHistoryMessages, setMessage);
     };
+
 
     // Renderiza as mensagens
     const renderMessages = () => {
@@ -58,6 +98,7 @@ const CreationScreen = ({ navigation }) => {
             </View>
         ));
     };
+
 
     return (
         <View style={CreationStyles.containerMaster}>
@@ -79,7 +120,22 @@ const CreationScreen = ({ navigation }) => {
                     source={require('../Assets/logo_translucid.png')}>
                 </Image>
                 <View>
+
                     {renderMessages()}
+
+                    {historyMessages.map((item, index) => (
+                        <View
+                            key={index}
+                            style={item.fromUser ? CreationStyles.userMessageContainer : CreationStyles.botMessageContainer}
+                        >
+                            <Text
+                                style={item.fromUser ? CreationStyles.userMessage : CreationStyles.botMessage}
+                            >
+                                {item.text}
+                            </Text>
+                        </View>
+                    ))}
+
                 </View>
             </ScrollView>
             <View style={CreationStyles.footer}>

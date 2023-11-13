@@ -6,6 +6,7 @@ import { EntradaScreen } from './src/Screens/EntradaScreen.js';
 import { CadastroScreen } from './src/Screens/CadastroScreen.js';
 import { LoginScreen } from './src/Screens/LoginScreen.js';
 import { MenuScreen } from './src/Screens/MenuScreen.js';
+import { CreationScreen } from './src/Screens/CreationScreen.js';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const App = () => {
                 <Stack.Screen name="CadastroScreen" component={CadastroScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="LoginScreen" component={LoginScreen} options={{headerShown: false}}/>
                 <Stack.Screen name="MenuScreen" component={MenuScreen} options={{headerShown: false}}/>
+                <Stack.Screen name="CreationScreen" component={CreationScreen} options={{headerShown: false}}/>
             </Stack.Navigator>
         </NavigationContainer>
 
