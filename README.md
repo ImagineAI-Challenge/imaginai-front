@@ -25,6 +25,7 @@
 5. [Iniciar aplicativo](#Iniciar-aplicativo)
 6. [Instruções de uso](#Instruções-de-uso)
 7. [Testes e limitações](#Testes-e-limitacoes)
+8. [Agradecimentos](#Agradecimentos)
 
 
 ## URLs relevantes
@@ -102,3 +103,11 @@ Por último e não menos importante, essa é a tela onde você vai conversar com
 Nesse tópico, o assunto abordado será sobre as limitações do aplicativo.
 Como já havia mencionado, o aplicativo está em fase de desenvolvimento, ainda como feature principal do programa, falta a integração com imagem de inteligência artificial.
 Por conta da aplicação ainda estar em testes, o uso de tokens com a API do chatGPT é limitada a 100, ou seja, perguntas complexas não terão o retorno de respostas satisfatórias.
+
+## Agradecimentos
+
+Agradecemos aos desenvolvedores que dedicaram seu tempo e habilidades para aprimorar o código-fonte e a funcionalidade do aplicativo. Suas contribuições são inestimáveis e moldaram positivamente a experiência do usuário.
+
+Além disso, extendemos nossa gratidão àqueles que colaboraram na criação e melhoria da documentação. A clareza e a acessibilidade da informação são fundamentais, e sua ajuda nesse aspecto não passa despercebida.
+
+Agradecemos também à comunidade de código aberto, cujas ferramentas e frameworks foram essenciais para o desenvolvimento suave e eficiente do ImaginAI. Ao compartilhar recursos e conhecimentos, todos contribuímos para o avanço coletivo da tecnologia. Muito obrigado.
