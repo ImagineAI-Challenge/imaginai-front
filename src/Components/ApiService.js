@@ -1,8 +1,7 @@
-const ip = ''; // ip da máquina
+const ip = '192.168.15.5'; // ip da máquina
 const port = '8080'; // port vide a api de comunicacao
 
 // Organiza o envio de mensagem a API
-
 export const enviarMensagemAPI = async (mensagem) => {
    try {
     const response = await fetch(`http://${ip}:${port}/gpt/prompt`, {
@@ -29,7 +28,6 @@ export const enviarMensagemAPI = async (mensagem) => {
 };
 
 // Cadastro de usuario
-
 export const cadastrarUsuario = async (email, senha) => {
   try {
    const response = await fetch(`http://${ip}:${port}/usuarios`, {
@@ -55,9 +53,7 @@ export const cadastrarUsuario = async (email, senha) => {
  }
 };
 
-
 // Autenticacao do usuario
-
 export const autenticarUsuario = async (email, senha) => {
   try {
     const response = await fetch(`http://${ip}:${port}/login`, {
@@ -81,4 +77,4 @@ export const autenticarUsuario = async (email, senha) => {
     console.error('Erro na solicitação:', error);
     throw error;
   }
-};
+ };

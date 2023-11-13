@@ -12,18 +12,7 @@ const LoginScreen = () => {
     const navigation = useNavigation();
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
-    /* PROXIMA SPRINT
-    const handleLogin = async () => {
-        const response = await autenticarUsuario(email, senha);
 
-        if (response.sucesso === true) {
-            navigation.navigate('MenuScreen')
-        } else {
-            Alert('Email ou senha errados')
-        }
-    
-    }
-    */
     return (
         <View style={LoginStyles.containerMaster}>
             <Image
