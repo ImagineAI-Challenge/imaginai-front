@@ -86,16 +86,34 @@ O aplicativo é bem intuitivo, consta uma tela inicial com a logo do projeto ond
     <img src="imaginai_photos/CadastroScreen.png" alt="tela de cadastro">
 </div>
 
-Depois do login, há essa tela onde terão todas as suas histórias criadas, podendo excluí-la ou editá-la do jeito que quiser.
+Depois do login, há essa tela onde terão todas as suas histórias criadas, podendo excluí-la ou editá-la do jeito que quiser. Também pode ir para a tela de criação de personagem.
 
 <div align="center">
-    <img src="imaginai_photos/MenuScreen.png" alt="tela de histórias">
+    <img src="https://github.com/ImagineAI-Challenge/imaginai-front/assets/101985616/6f6b03ac-8b62-4fab-8a69-4bcd6bdcc954" alt="tela de histórias">
 </div>
 
-Por último e não menos importante, essa é a tela onde você vai conversar com a inteligência artificial e criar uma história junto a ela.
+Essa é a tela onde você vai conversar com a inteligência artificial e criar uma história junto a ela caso clique em nova historia.
 
 <div align="center">
     <img src="imaginai_photos/CreationScreen.png" alt="tela conversa">
+</div>
+
+Caso você clique em personagem, irá para uma tela que fará a litagem dos personagens caso hajam no banco. Você tem duas opções: entrar em um personagem para ver mais detalhes (caso exista um) ou criar um novo clicando no botão.
+
+<div align="center">
+    <img src="https://github.com/ImagineAI-Challenge/imaginai-front/assets/101985616/1de06061-d4ae-4aef-9b87-d8e53a4c30e7" alt="tela lista personagens">
+</div>
+
+Na criação de personagem, você encontrará um formulário. Basta preenchê-lo que você será enviado para a tela de vizualização com seu novo eprsonagem criado. Aqui você pode criar rapidamente um personagem com uma pequena história gerada pelo GPT.
+
+<div align="center">
+    <img src="https://github.com/ImagineAI-Challenge/imaginai-front/assets/101985616/e02c31d3-4ba4-4bca-927f-3e55d87c2763" alt="tela criação de personagem">
+</div>
+
+Por fim, haverá a mesma tela caso você clique no personagem na tela de listagem dos personagens.
+
+<div align="center">
+    <img src="https://github.com/ImagineAI-Challenge/imaginai-front/assets/101985616/07c1d1f8-4796-49cb-a407-5346127d2f62" alt="tela detalhes de personagem">
 </div>
 
 ## Testes e limitações
