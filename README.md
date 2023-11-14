@@ -29,7 +29,8 @@
 
 
 ## URLs relevantes
-- *[Vídeo de explicação do projeto em geral](https://www.youtube.com/watch?v=wf3xPOcDF8E)*
+- ~*[Vídeo de explicação do projeto em geral](https://www.youtube.com/watch?v=wf3xPOcDF8E) (Sprint 03)~*
+- [Video com uma explicação breve do projeto bem como demonstração do funcionamento](https://www.youtube.com/watch?v=8rPGuNSa_C8) (Sprint 04)
 - *[API de comunicação](https://github.com/ImagineAI-Challenge/imaginai-api-comunicacao)*
 - *[Projeto de IA geradora de mapas](https://github.com/ImagineAI-Challenge/imaginai-api-MagGen-IA-App)*
 
